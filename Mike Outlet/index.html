@@ -20,9 +20,6 @@
             </div>
             <div class="navItem">
             </div>
-            <div class="navItem">
-                <span class="limitedOffer">Limited Offer!</span>
-            </div>
         </div>
         <div class="navBottom">
             <h3 class="menuItem">AIR FORCE</h3>
@@ -32,6 +29,13 @@
             <h3 class="menuItem">HIPPIE</h3>
         </div>
     </nav>
+    <div class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div class="cart-items"></div>
+        <div class="total-price">Total: ₱0</div>
+        <button class="checkoutButton" onclick="openCheckout()">Checkout</button>
+    </div>
+
     <div class="slider">
         <div class="sliderWrapper">
             <div class="sliderItem">
@@ -115,28 +119,8 @@
                 <div class="size">43</div>
                 <div class="size">44</div>
             </div>
-            <button class="productButton" onclick="checkSize()">BUY NOW!</button>
+            <button class="productButton">BUY NOW!</button>
         </div>
-        
-        <div class="payment">
-            <h1 class="payTitle">Personal Information</h1>
-            <label>Name of the Customer</label>
-            <input type="text" placeholder="Full name" class="payInput" required>
-            <label>Phone Number</label>
-            <input type="text" placeholder="+63 901 12345" class="payInput" required>
-            <label>Address</label>
-            <input type="text" placeholder="Full Address" class="payInput" required>
-            <label>Order Date</label>
-            <div class="shipInfo">
-                <input type="date" placeholder="date" class="payInput sm" value="" required>
-            </div>
-            <button type="submit" class="payButton" onclick="openPopup()">Checkout!</button>
-            <span class="close">X</span>
-            <div class="popup" id="popup">
-                <h2>Thank You for your purchase!</h2>
-                <button type="submit" onclick="closePopup()">Done</button>
-            </div>
-        </div>        
     </div>
     <div class="gallery">
         <div class="galleryItem">
@@ -173,6 +157,29 @@
                 alt="" class="nsImg">
         </div>
     </div>
+     <!-- Checkout Modal -->
+     <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div>
+                    <label for="card">Credit Card:</label>
+                    <input type="text" id="card" name="card" required>
+                </div>
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
     <script src="./app.js"></script>
 </body>
 
